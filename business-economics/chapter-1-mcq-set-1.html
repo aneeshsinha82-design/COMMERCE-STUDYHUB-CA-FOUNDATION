@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Business Economics | Chapter 1 | MCQ Set 1</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:900px;margin:0 auto;padding:24px;background:#f6f8fa;color:#222}h1{color:#163a5f}.card{background:#fff;padding:20px;margin:16px 0;border-radius:10px;box-shadow:0 1px 4px #0002}.options label{display:block;padding:8px;margin:5px 0;background:#f1f3f5;border-radius:6px;cursor:pointer}.btn{padding:10px 16px;border:0;border-radius:6px;background:#0969da;color:#fff;cursor:pointer}.result{font-weight:bold;margin-top:15px}
+</style></head><body>
+<p><a href="../../index.html">← Back to Home</a></p>
+<h1>Business Economics</h1><h2>Chapter 1.1: Introduction — MCQ Set 1</h2>
+<p>This first set contains 28 practice questions. More Chapter 1 material can be added later.</p>
+<div id="quiz"></div><button class="btn" onclick="check()">Check Answers</button><div id="result" class="result"></div>
+<script>
+const q=[
+["Economists regard decision making as important because:",["The resources required to satisfy unlimited wants are scarce.","It is crucial to understand allocation of scarce resources.","Resources have alternative uses.","All the above."],"d"],
+["Business Economics is –",["Abstract and applies the tools of Microeconomics.","Involves practical application of economic theory in business decision making.","Incorporates tools from multiple disciplines.","(b) and (c) above."],"d"],
+["In Economics, scarcity means –",["Absolute scarcity in less developed countries.","Relative scarcity in relation to the wants of society.","Scarcity during business failure and calamities.","Scarcity caused by excessive consumption by the rich."],"b"],
+["Which is a normative statement?",["Planned economies allocate resources via government departments.","Most transitional economies experienced falling output and rising prices.","There is greater consumer sovereignty in market economies.","Reducing inequality should be a major priority for mixed economies."],"d"],
+["In every economic system, scarcity imposes limitations on –",["Households, business firms, governments, and the nation as a whole.","Households and firms, but not governments.","Local and state governments, but not federal government.","Households and governments, but not firms."],"a"],
+["Macroeconomics is also called ______ economics.",["Applied","Aggregate","Experimental","None of the above"],"b"],
+["An example of positive economic analysis would be:",["Relationship between food price and quantity purchased.","How much income each person should be guaranteed.","The fair price for food.","How to distribute output."],"a"],
+["Study of how corporate income tax affects national unemployment is an example of –",["Macro-Economics","Descriptive Economics","Micro-economics","Normative economics"],"a"],
+["Which does not suggest a macro approach for India?",["Determining India's GNP.","Finding causes of failure of ABC Ltd.","Identifying causes of inflation in India.","Causes of industry's failure to provide large-scale employment."],"b"],
+["In the Ram–Krishan–Vinod–Madhu conversation, the normative statement is made by –",["Ram","Krishan","Vinod","Madhu"],"d"],
+["Which is not a subject matter of Micro-economics?",["Price of mangoes.","Cost of producing a fire truck.","Quantity of mangoes produced for the market.","National economy's annual growth rate."],"d"],
+["The branch dealing with allocation of resources is –",["Micro-Economic theory","Macro-economic theory","Econometrics","None of the above"],"a"],
+["Which is not the subject matter of Business Economics?",["Should our firm be in this business?","How much should be produced and at what price?","How will the product be placed in the market?","How should we decrease unemployment in the economy?"],"d"],
+["Which is a normative economic statement?",["Unemployment rate decreases with industrialization.","Economics studies human behaviour.","The minimum wage should be raised to ₹200 per day.","India spends a huge amount on national defence."],"c"],
+["Which is a topic of Macroeconomics?",["Effect of wages on cotton industry profitability.","Effect on steel prices when more steel is imported.","Effect of increasing inflation on living standards in India.","Effect of coffee price on tea consumption."],"c"],
+["The difference between positive and normative Economics is:",["Positive explains performance; normative finds reasons for poor performance.","Positive describes facts; normative evaluates good or bad for welfare.","Normative describes facts; positive evaluates good or bad.","Positive prescribes; normative describes."],"b"],
+["Which is not within the scope of Business Economics?",["Capital Budgeting","Risk Analysis","Business Cycles","Accounting Standards"],"d"],
+["Which statement is incorrect?",["Business economics is normative in nature.","Business Economics has a close connection with statistics.","Business Economist need not worry about macro variables.","Business Economics is also called Managerial Economics."],"c"],
+["Economic goods are scarce because they:",["Cannot be increased in quantity.","Do not exist in adequate quantity to satisfy society's requirements.","Are of primary importance.","Are limited to man-made goods."],"b"],
+["In a free market economy allocation of resources is determined by:",["Voting done by consumers.","A central planning authority.","Consumer preferences.","Level of profits of firms."],"c"],
+["A disadvantage of allocating resources using the market system is:",["Income tends to be unevenly distributed.","People do not get goods of choice.","Initiative and enterprise are not rewarded.","Profits tend to be low."],"a"],
+["Which does not apply to a market economy?",["Firms decide whom to hire and what to produce.","Firms aim at maximizing profits.","Households decide where to work and what to buy.","Government policies are the primary forces guiding decisions."],"d"],
+["Macro Economics is the study of:",["All aspects of scarcity.","The national and global economy as a whole.","Big businesses.","Decisions of individual businesses and people."],"b"],
+["“Science which deals with wealth of Nation” was given by:",["Alfred Marshall","A C Pigou","Adam Smith","JB Say"],"c"],
+["Managerial economics –",["Is Applied Economics bridging theory and business practice.","Is just a theory concept.","Trains managers how to behave in recession.","Only explains concepts."],"a"],
+["Which statement is correct?",["Micro economics is important for a particular household and firm.","Macro economics studies economic conditions of a country.","None of the above.","Both a and b."],"d"],
+["The consultant guiding changes in staff appointment and loan availability is using:",["Micro economics","Macro economics","None of the above","Both a and b"],"a"],
+["Which statements are correct regarding business economics?",["Business policies are rooted in economic principles.","It uses micro analysis of business units and macro analysis of the environment.","It integrates economic theory and business practices pragmatically.","All the above."],"d"]
+];
+const letters=["a","b","c","d"];
+document.getElementById("quiz").innerHTML=q.map((x,i)=>'<div class="card"><b>'+ (i+1)+'. '+x[0]+'</b><div class="options">'+x[1].map((o,j)=>'<label><input type="radio" name="q'+i+'" value="'+letters[j]+'"> ('+letters[j]+') '+o+'</label>').join('')+'</div></div>').join('');
+function check(){let score=0,html='';q.forEach((x,i)=>{let s=document.querySelector('input[name="q'+i+'"]:checked');if(s&&s.value===x[2])score++;});document.getElementById("result").textContent='Score: '+score+' / '+q.length;}
+</script></body></html>
